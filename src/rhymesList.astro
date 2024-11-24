@@ -1,0 +1,21 @@
+---
+export interface Props {
+  rhymes: string[];
+  word: string;
+}
+
+const { rhymes, word } = Astro.props;
+---
+
+<div>
+  <h2>Rhymes for "{word}":</h2>
+  {rhymes.length > 0 ? (
+    <ul>
+      {rhymes.map((rhyme) => (
+        <li>{rhyme}</li>
+      ))}
+    </ul>
+  ) : (
+    <p>No rhymes available.</p>
+  )}
+</div>
